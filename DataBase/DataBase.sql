@@ -11,7 +11,7 @@ INSERT INTO roles (role_id, r_name) VALUES
 
 CREATE TABLE city (
     city_id INT AUTO_INCREMENT PRIMARY KEY,
-    c_name VARCHAR(255)
+    c_name VARCHAR(255) UNIQUE
 );
 
 
@@ -33,12 +33,12 @@ CREATE TABLE area (
 
 INSERT INTO area (area_name, pincode, City_code) VALUES
     ('MHADA', 12345, 1),
-    ('Tech Park', 54321, 2),
-    ('Kranti Chowk', 67890, 1);
+    ('Market Yard', 54321, 2),
+    ('New Mondha', 67890, 1);
 
 CREATE TABLE users (
     uid INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255),
+    username VARCHAR(255) UNIQUE,
     password VARCHAR(255),
     role_id INT,
     activation_status BIT DEFAULT 0, 
@@ -58,8 +58,8 @@ CREATE TABLE consumer (
     consumer_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(25),
     last_name VARCHAR(25),
-    phone_no BIGINT,
-    email VARCHAR(70),
+    phone_no BIGINT UNIQUE,
+    email VARCHAR(70) UNIQUE,
     local_area VARCHAR(50),
     user_id INT,
     area_id INT,
@@ -69,19 +69,19 @@ CREATE TABLE consumer (
 
 
 INSERT INTO consumer (consumer_id, first_name, last_name, phone_no, email, local_area, user_id, area_id) VALUES
-    (1, 'Kunal', 'Bhise', 9876543210, 'kunal@gmail.com', 'MHADA', 2, 1),
-    (2, 'Mayur', 'Biradar', 1234567890, 'mayur@gmail.com', 'Tech Park', 2, 2),
-    (3, 'Akshay', 'Swami', 8765432109, 'akshay@gmail.com', 'MHADA', 3, 3),
+    (1, 'Kunal', 'Bhise', 9876543210, 'kunal@gmail.com', 'AB Chowk', 2, 1),
+    (2, 'Mayur', 'Biradar', 1234567890, 'mayur@gmail.com', 'LBS Road', 2, 2),
+    (3, 'Akshay', 'Swami', 8765432109, 'akshay@gmail.com', 'Niwara Society', 3, 3),
     (4, 'Pravin', 'Wagh', 9767921052, 'pravin@gmail.com', 'Kranti Chowk', 1, 3);
 
 
 CREATE TABLE seller (
     seller_id INT AUTO_INCREMENT PRIMARY KEY,
-    GST_No VARCHAR(50),
-    License_id VARCHAR(50),
+    GST_No VARCHAR(50) UNIQUE,
+    License_id VARCHAR(50) UNIQUE,
     Shop_name VARCHAR(70),
-    phone_no BIGINT,
-    email VARCHAR(70),
+    phone_no BIGINT UNIQUE,
+    email VARCHAR(70) UNIQUE,
     local_area VARCHAR(50),
     user_id INT,
     area_id INT,
@@ -91,7 +91,7 @@ CREATE TABLE seller (
 
 
 INSERT INTO seller (GST_No, License_id, Shop_name, phone_no, email, local_area, user_id, area_id) VALUES
-    ('ABC123', 'LICENSE001', 'ElectroMart', 1234567890, 'electromart@example.com', 'Downtown', 1, 1),
+    ('ABC123', 'LICENSE001', 'ElectroMart', 1234567890, 'electromart@example.com', 'Sadashiv Peth', 1, 1),
     ('XYZ789', 'LICENSE002', 'TechBazaar', 9876543210, 'techbazaar@example.com', 'Tech Park', 2, 2),
-    ('PQR456', 'LICENSE003', 'GadgetZone', 8765432109, 'gadgetzone@example.com', 'Suburbia', 3, 3);
+    ('PQR456', 'LICENSE003', 'GadgetZone', 8765432109, 'gadgetzone@example.com', 'CIDCO', 3, 3);
 
