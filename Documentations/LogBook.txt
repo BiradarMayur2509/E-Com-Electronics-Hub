@@ -1,0 +1,12 @@
+1> Test case Diagram - Using StarUML
+
+2> Creating Database and required tables for the REGISTRATION & LOGIN
+
+3> Creating Workflow Diagram
+
+4> Creating SpringBoot Project
+
+5> Creating React And Redux File
+package.json--> contains the list of all the dependencies neede to be installed with "npm" 
+
+
