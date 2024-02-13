@@ -13,7 +13,7 @@ import com.example.demo.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-	@Query("select u from User u where username= :uid and password= :pwd")
+	@Query("select u from User u where username= :uid and password= :pwd")	//HQL Query
 	public Optional<User> getUser(String uid, String pwd);
 	
 	

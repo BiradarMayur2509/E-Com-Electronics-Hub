@@ -1,5 +1,9 @@
 import { useReducer, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login } from './slice';
+
+
 
 export default function LoginComp (){
 
@@ -26,6 +30,7 @@ export default function LoginComp (){
     const [info, dispatch] = useReducer(reducer,init) ;
     const [msg, setMsg] = useState("");
     const navigate = useNavigate();
+    const reduxAction = useDispatch();  //...........
 
     const handleChange = (e, field) => {
         dispatch({ type: 'update', fld: field, val: e.target.value });
@@ -72,6 +77,7 @@ export default function LoginComp (){
                     }
                     else
                     {
+                        reduxAction(login())
                         if(obj.activation_status === false)
                         {
                             alert("Request has not been approved");
