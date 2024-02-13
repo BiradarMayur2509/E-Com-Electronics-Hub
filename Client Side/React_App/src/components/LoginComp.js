@@ -1,6 +1,6 @@
 import { useReducer, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from './slice';
 
 
@@ -31,6 +31,7 @@ export default function LoginComp (){
     const [msg, setMsg] = useState("");
     const navigate = useNavigate();
     const reduxAction = useDispatch();  //...........
+    const mystate = useSelector((state)=>state.logged);
 
     const handleChange = (e, field) => {
         dispatch({ type: 'update', fld: field, val: e.target.value });
@@ -86,14 +87,17 @@ export default function LoginComp (){
                             if(obj.role.role_id === 1)
                             {
                                 navigate("/admin_home");
+                                reduxAction(login());
                             }
                             else if (obj.role.role_id === 2)
                             {
                                 navigate("/customer_home");
+                                reduxAction(login());
                             }
                             else if (obj.role.role_id === 3)
                             {
                                 navigate("/seller_home");
+                                reduxAction(login());
                             }
                             
                         }

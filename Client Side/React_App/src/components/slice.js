@@ -6,8 +6,14 @@ export const loggedSlice= createSlice({
         loggedIn:false
     },
     reducers:{
-        login:(state) => {console.log("in login action"); return {LoggedIn:true}},
-        logout:(state) => {console.log("in logout action"); return {LoggedIn:false}}
+        login:(state) => {
+                            console.log("in login action"); 
+                            return {loggedIn:true};
+                         },
+        logout:(state) => {
+                            console.log("in logout action"); 
+                            return {loggedIn:false};
+                           }
     }
 })
 export const {login,logout}=loggedSlice.actions

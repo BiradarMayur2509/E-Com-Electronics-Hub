@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 
 function App() {
   //initial state of logged 
-  const mystate=useSelector((state)=> state.logged);
+  const mystate=useSelector(state=> state.logged);
 
   return (
     <div className="App">
