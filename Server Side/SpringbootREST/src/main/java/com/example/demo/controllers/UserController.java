@@ -12,7 +12,7 @@ import com.example.demo.services.UserService;
 
 
 
-@CrossOrigin(origins="http://localhost/3000")
+@CrossOrigin(origins="http://localhost:3000")
 @RestController
 public class UserController {
 
