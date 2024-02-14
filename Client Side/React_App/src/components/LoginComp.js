@@ -2,6 +2,7 @@ import { useReducer, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from './slice';
+import './LoginComp.css';
 
 
 
@@ -113,7 +114,7 @@ export default function LoginComp (){
                 <div className="mb-3">
                     <label htmlFor="uid" className="form-label">Enter User Name :</label>
                     <input type="text" className="form-control" id="uid" name="uid" value={info.uid} onChange={(e) => handleChange(e, 'uid')} /> <br />
-                    <div id="emailHelp" className="form-text">We'll never share email with anyone else.</div>
+                    <div id="emailHelp" className="form-text">.</div>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="pwd" className="form-label">Enter Password :</label>
