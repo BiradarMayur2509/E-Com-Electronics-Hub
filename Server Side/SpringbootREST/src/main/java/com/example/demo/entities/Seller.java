@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -18,12 +19,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Seller {
 
 	// seller_id INT AUTO_INCREMENT PRIMARY KEY,
-	  //  GST_No VARCHAR(50),
-	    //License_id VARCHAR(50),
+	  //  gst_no VARCHAR(50),
+	    //license_id VARCHAR(50),
 	    //Shop_name VARCHAR(70),
 	    //phone_no BIGINT,
 	    //email VARCHAR(70),
-	    //local_area VARCHAR(50),
+	    //area_name VARCHAR(50),
 	    //user_id INT,
 	    //area_id INT,
 	
@@ -34,10 +35,10 @@ public class Seller {
 	int seller_id;
 	
 	@Column
-	String GST_No;
+	String gst_no;
 	
 	@Column
-	String License_id;
+	String license_id;
 	
 	@Column
 	String shop_name;
@@ -48,22 +49,15 @@ public class Seller {
 	@Column
 	String email;
 	
-	@Column
-	String local_area;
 	
-//	@Column
-//	int user_id;
-//	
-//	@Column
-//	int area_id;
 	
 
-	@ManyToOne
+	@OneToOne
     @JoinColumn(name = "area_id")
 	Area area;
 	
-//	@JsonIgnoreProperties("seller")
-	@ManyToOne
+
+	@OneToOne
     @JoinColumn(name = "user_id")
 	User user;
 
@@ -71,15 +65,14 @@ public class Seller {
 		super();
 	}
 
-	public Seller(String gST_No, String license_id, String shop_name, long phone_no, String email, String local_area,
+	public Seller(String gst_no, String license_id, String shop_name, long phone_no, String email, 
 			Area area, User user) {
 		super();
-		GST_No = gST_No;
-		License_id = license_id;
+		this.gst_no = gst_no;
+		this.license_id = license_id;
 		this.shop_name = shop_name;
 		this.phone_no = phone_no;
 		this.email = email;
-		this.local_area = local_area;
 		this.area = area;
 		this.user = user;
 	}
@@ -92,20 +85,20 @@ public class Seller {
 		this.seller_id = seller_id;
 	}
 
-	public String getGST_No() {
-		return GST_No;
+	public String getGst_no() {
+		return gst_no;
 	}
 
-	public void setGST_No(String gST_No) {
-		GST_No = gST_No;
+	public void setGst_no(String gst_no) {
+		this.gst_no = gst_no;
 	}
 
 	public String getLicense_id() {
-		return License_id;
+		return license_id;
 	}
 
 	public void setLicense_id(String license_id) {
-		License_id = license_id;
+		this.license_id = license_id;
 	}
 
 	public String getShop_name() {
@@ -132,13 +125,6 @@ public class Seller {
 		this.email = email;
 	}
 
-	public String getLocal_area() {
-		return local_area;
-	}
-
-	public void setLocal_area(String local_area) {
-		this.local_area = local_area;
-	}
 
 	public Area getArea() {
 		return area;
