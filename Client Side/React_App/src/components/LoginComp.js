@@ -1,5 +1,9 @@
 import { useReducer, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from './slice';
+
+
 
 export default function LoginComp (){
 
@@ -26,6 +30,8 @@ export default function LoginComp (){
     const [info, dispatch] = useReducer(reducer,init) ;
     const [msg, setMsg] = useState("");
     const navigate = useNavigate();
+    const reduxAction = useDispatch();  //...........
+    const mystate = useSelector((state)=>state.logged);
 
     const handleChange = (e, field) => {
         dispatch({ type: 'update', fld: field, val: e.target.value });
@@ -72,6 +78,7 @@ export default function LoginComp (){
                     }
                     else
                     {
+                        reduxAction(login())
                         if(obj.activation_status === false)
                         {
                             alert("Request has not been approved");
@@ -80,14 +87,17 @@ export default function LoginComp (){
                             if(obj.role.role_id === 1)
                             {
                                 navigate("/admin_home");
+                                reduxAction(login());
                             }
                             else if (obj.role.role_id === 2)
                             {
-                                navigate("/customer_home");
+                                navigate("/consumer_home");
+                                reduxAction(login());
                             }
                             else if (obj.role.role_id === 3)
                             {
                                 navigate("/seller_home");
+                                reduxAction(login());
                             }
                             
                         }
@@ -118,5 +128,3 @@ export default function LoginComp (){
         </div>
     )
 }
-
-
