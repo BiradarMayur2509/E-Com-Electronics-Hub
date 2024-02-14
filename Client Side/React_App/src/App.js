@@ -5,6 +5,7 @@ import LoginComp from './components/LoginComp';
 import ConsumerHome from './components/ConsumerHome';
 import AdminHome from './components/AdminHome';
 import SellerHome from './components/SellerHome';
+import SellerReg from './components/SellerReg';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <div className='container-fluid'> 
           <ul className="nav navbar">
             <li className="nav-item">
-              <Link to="/register" className="nav-link px-3">Seller Registration</Link>
+              <Link to="/sellerreg" className="nav-link px-3">Seller Registration</Link>
             </li>
             <li className="nav-item">
               <Link to="/registercustomer" className="nav-link px-3">Consumer Registration</Link>
@@ -30,6 +31,7 @@ function App() {
 
       <Routes>
         <Route path='/login' element={<LoginComp />} />
+        <Route path='/sellerreg' element={<SellerReg />} />
         <Route path="/admin_home" element={<AdminHome />} />
         <Route path="/consumer_home" element={<ConsumerHome />} />
         <Route path="/seller_home" element={<SellerHome />} />
