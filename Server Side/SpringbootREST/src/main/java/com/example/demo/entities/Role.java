@@ -18,6 +18,7 @@ public class Role {
 	@Column
 	String r_name;
 	
+	
 	public Role(int role_id, String r_name) {
 		super();
 		this.role_id = role_id;

@@ -115,15 +115,19 @@ export default function SellerReg() {
                 </div>
                 <div className="mb-3">
     <label htmlFor="city" className="form-label">Enter User city :</label>
-    <input list="cityOptions" className="form-control" id="city" name="city" value={info.city}  
-    onChange={(e)=>{dispatch({type:'update',fld:'city', val:e.target.value})}}/>
-    <datalist id="cityOptions">
-        <option value="Mumbai" />
-        <option value="Pune" />
-        <option value="Nashik" />
-        <option value="Nagpur" />
-    </datalist>
+    <div className="select-wrapper">
+        <select className="form-select" id="city" name="city" value={info.city}  
+        onChange={(e)=>{dispatch({type:'update',fld:'city', val:e.target.value})}}>
+            <option value="" disabled>Select City</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Nashik">Nashik</option>
+            <option value="Nagpur">Nagpur</option>
+        </select>
+    </div>
     <div id="emailHelp" className="form-text"></div>
+
+
 </div>
 
                 

@@ -31,4 +31,9 @@ public class UserService {
 		return u;
 	}
 	
+	public User save(User u)
+	{
+		return urepo.save(u);
+	}
+	
 }
