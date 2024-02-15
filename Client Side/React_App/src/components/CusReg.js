@@ -94,18 +94,38 @@ export default function SellerReg() {
                     <div id="emailHelp" className="form-text"></div>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Enter User License_id :</label>
+                    <label htmlFor="email" className="form-label">Enter User email :</label>
                     <input type="text" className="form-control" id="email" name="email" value={info.email}  
                     onChange={(e)=>{dispatch({type:'update',fld:'email', val:e.target.value})}}/>
                     <div id="emailHelp" className="form-text"></div>
                 </div>
+                
                
                 <div className="mb-3">
-                    <label htmlFor="local_area" className="form-label">Enter User local_area :</label>
-                    <input type="text" className="form-control" id="local_area" name="local_area" value={info.local_area}  
-                    onChange={(e)=>{dispatch({type:'update',fld:'local_area', val:e.target.value})}}/>
+                    <label htmlFor="area_name" className="form-label">Enter User area_name :</label>
+                    <input type="text" className="form-control" id="area_name" name="area_name" value={info.area_name}  
+                    onChange={(e)=>{dispatch({type:'update',fld:'area_name', val:e.target.value})}}/>
                     <div id="emailHelp" className="form-text"></div>
                 </div>
+                <div className="mb-3">
+                    <label htmlFor="pincode" className="form-label">Enter User pincode :</label>
+                    <input type="number" className="form-control" id="pincode" name="pincode" value={info.pincode}  
+                    onChange={(e)=>{dispatch({type:'update',fld:'pincode', val:e.target.value})}}/>
+                    <div id="emailHelp" className="form-text"></div>
+                </div>
+                <div className="mb-3">
+    <label htmlFor="city" className="form-label">Enter User city :</label>
+    <input list="cityOptions" className="form-control" id="city" name="city" value={info.city}  
+    onChange={(e)=>{dispatch({type:'update',fld:'city', val:e.target.value})}}/>
+    <datalist id="cityOptions">
+        <option value="Mumbai" />
+        <option value="Pune" />
+        <option value="Nashik" />
+        <option value="Nagpur" />
+    </datalist>
+    <div id="emailHelp" className="form-text"></div>
+</div>
+
                 
                 <button type="submit" className="btn btn-primary mb-3" onClick={(e)=> {sendData(e)}}>Submit</button>
                 <button type="reset" className="btn btn-primary mb-3" onClick={()=>{dispatch({type:'reset'})}}>Clear</button>
