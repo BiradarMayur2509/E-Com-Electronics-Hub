@@ -7,6 +7,7 @@ import AdminHome from './components/AdminHome';
 import SellerHome from './components/SellerHome';
 import { useSelector } from 'react-redux';
 import SellerReg from './components/SellerReg';
+// import LogoutComp from './components/logoutcomp';
 
 
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/admin_home" element={<AdminHome />} />
         <Route path="/consumer_home" element={<ConsumerHome />} />
         <Route path="/seller_home" element={<SellerHome />} />
+        {/* <Route path="/logout" element={<LoginComp />} /> */}
 
       </Routes>
     </div>

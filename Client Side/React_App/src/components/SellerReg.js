@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 export default function SellerReg() {
 
     const init = {
-        username: "",
+    username: "",
     password: "",
     Shop_name: "",
     email: "",
