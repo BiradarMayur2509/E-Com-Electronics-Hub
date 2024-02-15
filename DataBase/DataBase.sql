@@ -41,9 +41,14 @@ CREATE TABLE users (
     username VARCHAR(255) UNIQUE,
     password VARCHAR(255),
     role_id INT,
-    activation_status BIT DEFAULT 0, 
+    activation_status BIT DEFAULT 
+        CASE 
+            WHEN role_id = 3 THEN 0
+            ELSE 1 
+        END,
     FOREIGN KEY (role_id) REFERENCES roles(role_id)
 );
+
 
 
 INSERT INTO users (username, password, role_id, activation_status)
