@@ -7,6 +7,7 @@ import AdminHome from './components/AdminHome';
 import SellerHome from './components/SellerHome';
 import { useSelector } from 'react-redux';
 import SellerReg from './components/SellerReg';
+import ConsumerReg from './components/ConsumerReg';
 // import LogoutComp from './components/logoutcomp';
 
 
@@ -25,7 +26,7 @@ function App() {
                 <Link to="/sellerreg" className="nav-link px-3">Seller Registration</Link>
               </li>
               <li className="nav-item">
-                <Link to="/registercustomer" className="nav-link px-3">Consumer Registration</Link>
+                <Link to="/consumerreg" className="nav-link px-3">Consumer Registration</Link>
               </li>
               <li className="nav-item">
                 <Link to="/login" className="nav-link px-3">Login</Link>
@@ -42,6 +43,7 @@ function App() {
         <Route path="/admin_home" element={<AdminHome />} />
         <Route path="/consumer_home" element={<ConsumerHome />} />
         <Route path="/seller_home" element={<SellerHome />} />
+        <Route path='/consumerreg' element={<ConsumerReg />} />
         {/* <Route path="/logout" element={<LoginComp />} /> */}
 
       </Routes>
