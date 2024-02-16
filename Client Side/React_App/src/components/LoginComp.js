@@ -91,7 +91,7 @@ export default function LoginComp (){
                             }
                             else if (obj.role.role_id === 2)
                             {
-                                navigate("/customer_home");
+                                navigate("/consumer_home");
                                 reduxAction(login());
                             }
                             else if (obj.role.role_id === 3)

@@ -40,15 +40,15 @@ function App() {
       <Routes>
         <Route path='/login' element={<LoginComp />} />
         <Route path='/sellerreg' element={<SellerReg />} />
-        <Route path="/admin_home" element={<AdminHome />} />
-        <Route path="/consumer_home" element={<ConsumerHome />} />
-        <Route path="/seller_home" element={<SellerHome />} />
         <Route path='/consumerreg' element={<ConsumerReg />} />
+        <Route path="/admin_home" element={<AdminHome />} />
+        <Route path="/consumer_home" element={<ConsumerHome/>} />
+        <Route path="/seller_home" element={<SellerHome />} />
+
         {/* <Route path="/logout" element={<LoginComp />} /> */}
 
       </Routes>
     </div>
   );
 }
-
 export default App;

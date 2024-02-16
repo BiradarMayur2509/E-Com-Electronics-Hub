@@ -8,5 +8,6 @@ export default function LogoutComp(){
     const dispatch=useDispatch();
     localStorage.clear();
     dispatch(logout())  //LoggedIn:Flase -main menu visible
-    navigate("/login")
+    // console.log()
+    // navigate("/login")
 }
