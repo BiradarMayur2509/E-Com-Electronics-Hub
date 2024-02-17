@@ -20,13 +20,12 @@ public class Area {
 	@Column
 	String area_name;
 	
+//	@Column
+//	String address;
+	
 	@Column
 	int pincode;
 	
-//	@Column
-//	int City_code;
-//	
-//	@JsonIgnoreProperties("area")
 	@ManyToOne
     @JoinColumn(name = "City_id")
 	City city;
@@ -73,7 +72,15 @@ public class Area {
 	public void setCity(City city) {
 		this.city = city;
 	}
-	
+
+//	public String getAddress() {
+//		return address;
+//	}
+//
+//	public void setAddress(String address) {
+//		this.address = address;
+//	}
+//	
 	
 //	Area area;
 	

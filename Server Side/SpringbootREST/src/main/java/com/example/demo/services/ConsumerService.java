@@ -9,8 +9,6 @@ import com.example.demo.repositories.ConsumerRepository;
 @Service
 public class ConsumerService {
 
-
-
 	@Autowired
 	ConsumerRepository crepo;
 	

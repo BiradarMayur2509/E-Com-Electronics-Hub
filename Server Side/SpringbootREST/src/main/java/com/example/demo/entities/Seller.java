@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,60 +14,60 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
-
 @Entity
-@Table(name="seller")
+@Table(name = "seller")
 public class Seller {
 
 	// seller_id INT AUTO_INCREMENT PRIMARY KEY,
-	  //  gst_no VARCHAR(50),
-	    //license_id VARCHAR(50),
-	    //Shop_name VARCHAR(70),
-	    //phone_no BIGINT,
-	    //email VARCHAR(70),
-	    //area_name VARCHAR(50),
-	    //user_id INT,
-	    //area_id INT,
-	
-	
-	
+	// gst_no VARCHAR(50),
+	// license_id VARCHAR(50),
+	// Shop_name VARCHAR(70),
+	// phone_no BIGINT,
+	// email VARCHAR(70),
+	// area_name VARCHAR(50),
+	// user_id INT,
+	// area_id INT,
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int seller_id;
-	
+
 	@Column
 	String gst_no;
-	
+
 	@Column
 	String license_id;
-	
+
 	@Column
 	String shop_name;
-	
+
 	@Column
 	long phone_no;
-	
+
 	@Column
 	String email;
 	
+	@Column
+	String address;
 	
-	
-
-	@OneToOne
-    @JoinColumn(name = "area_id")
+	@ManyToOne
+	@JoinColumn(name = "area_id")
 	Area area;
-	
 
 	@OneToOne
-    @JoinColumn(name = "user_id")
+	@JoinColumn(name = "user_id")
 	User user;
 
 	public Seller() {
 		super();
 	}
 
-	public Seller(String gst_no, String license_id, String shop_name, long phone_no, String email, 
+	public void setArea(Area area) {
+		this.area = area;
+	}
+
+
+	public Seller(String gst_no, String license_id, String shop_name, long phone_no, String email, String address,
 			Area area, User user) {
 		super();
 		this.gst_no = gst_no;
@@ -73,6 +75,7 @@ public class Seller {
 		this.shop_name = shop_name;
 		this.phone_no = phone_no;
 		this.email = email;
+		this.address = address;
 		this.area = area;
 		this.user = user;
 	}
@@ -125,13 +128,12 @@ public class Seller {
 		this.email = email;
 	}
 
-
-	public Area getArea() {
-		return area;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setArea(Area area) {
-		this.area = area;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public User getUser() {
@@ -141,9 +143,10 @@ public class Seller {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
-	
-		
-	
+
+	public Area getArea() {
+		return area;
+	}
+
+
 }

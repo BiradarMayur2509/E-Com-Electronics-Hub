@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,10 @@ public class CityService {
 	{
 		
 		return cyrepo.findById(city_id).get();
+	}
+	
+	public List<City> getAll(){
+		return cyrepo.findAll();
 	}
 	
 

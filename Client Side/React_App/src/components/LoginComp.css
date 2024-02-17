@@ -1,54 +1,48 @@
-/* Main Container */
-.admin-container {
-    max-width: 600px;
+.container {
+    width: 100px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #f00f0f;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: rgb(223, 166, 209);
   }
   
-  /* Title */
-  .title {
+  .mb-3 {
     text-align: center;
-    margin-bottom: 20px;
   }
   
-  /* Form Style */
-  .form-label {
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .col-sm-2 col-form-label {
     font-weight: bold;
   }
   
   .form-control {
-    width: 10%; /* Adjust width here */
-    padding: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  /* Button Style */
-  .btn {
+  .btn btn-primary me-2 {
     padding: 10px 20px;
-    margin-right: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
   }
   
   .btn-primary {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #ff0099;
+    color: #c22a2a;
   }
   
   .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #faa804;
   }
   
-  /* Error Message */
   .error-message {
     color: red;
-    font-style: italic;
-    margin-top: 10px;
   }
   

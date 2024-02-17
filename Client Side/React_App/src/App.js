@@ -7,7 +7,13 @@ import AdminHome from './components/AdminHome';
 import SellerHome from './components/SellerHome';
 import { useSelector } from 'react-redux';
 import SellerReg from './components/SellerReg';
-import CusReg from './components/CusReg'
+import ConsumerReg from './components/ConsumerReg'
+import UpdateProfile from './components/UpdateProfile';
+import SearchProducts from './components/SearchProducts';
+import AddToCart from './components/AddToCart';
+import ConfirmOrder from './components/ConfirmOrder';
+import ApproveSeller from './components/ApproveSeller';
+import UpdatePass from './components/UpdatePass';
 
 
 
@@ -25,7 +31,7 @@ function App() {
                 <Link to="/sellerreg" className="nav-link px-3">Seller Registration</Link>
               </li>
               <li className="nav-item">
-                <Link to="/cusreg" className="nav-link px-3">Consumer Registration</Link>
+                <Link to="/consumerreg" className="nav-link px-3">Consumer Registration</Link>
               </li>
               <li className="nav-item">
                 <Link to="/login" className="nav-link px-3">Login</Link>
@@ -41,10 +47,16 @@ function App() {
       <Routes>
         <Route path='/login' element={<LoginComp />} />
         <Route path='/sellerreg' element={<SellerReg />} />
-        <Route path='/cusreg' element={<CusReg />} />
+        <Route path='/consumerreg' element={<ConsumerReg />} />
         <Route path="/admin_home" element={<AdminHome />} />
         <Route path="/consumer_home" element={<ConsumerHome />} />
         <Route path="/seller_home" element={<SellerHome />} />
+        <Route path="/updateprofile" element={<UpdatePass />} />
+        {/* <Route path="/updateprofile" element={<UpdateProfile />} /> */}
+        <Route path="/searchproducts" element={<SearchProducts />} />
+        <Route path="/addcart" element={<AddToCart />} />
+        <Route path="/confirmorder" element={<ConfirmOrder />} />
+        <Route path="/approveSeller" element={<ApproveSeller />} />
 
       </Routes>
     </div>

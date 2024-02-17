@@ -1,5 +1,9 @@
 package com.example.demo.controllers;
 
+
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,14 +44,15 @@ public class SellerController {
 	@PostMapping("/sellerreg")
 	public Seller saveSeller(@RequestBody SellerRegistration slr)
 	{
+		System.out.println(slr);
 		Role r = rservice.getRole(3);
 		User u = new User(slr.getUsername(),slr.getPassword(),r,true);
 		User saved = uservice.save(u);
 		
-		City cy = cyservice.getCity(slr.getC_id());
-		Area a = new Area(slr.getArea_name(),slr.getPincode(),cy);
-		Area asaved = aservice.save(a);
-		Seller s = new Seller(slr.getGst_no(),slr.getLicense_id(),slr.getShop_name(),slr.getPhone_no(),slr.getEmail(),asaved,saved);
+		
+		Area ar = aservice.getArea(slr.getArea_id());
+		
+		Seller s = new Seller(slr.getGst_no(),slr.getLicense_id(),slr.getShop_name(),slr.getPhone_no(),slr.getEmail(), slr.getAddress(),ar,saved);
 		System.out.println(s);
 
 		return sservice.saveSeller(s);

@@ -18,11 +18,9 @@ public class SellerRegistration {
 	
 	String email;
 	
-	String area_name;
+	int area_id;
 	
-	int pincode;
-	
-	int c_id;
+	String address;
 
 	
 	public SellerRegistration() {
@@ -30,7 +28,7 @@ public class SellerRegistration {
 	}
 
 	public SellerRegistration(String username, String password, String gst_no, String license_id, String shop_name,
-			long phone_no, String email, String area_name, int pincode, int c_id) {
+			long phone_no, String email,  int area_id, String address) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -39,9 +37,8 @@ public class SellerRegistration {
 		this.shop_name = shop_name;
 		this.phone_no = phone_no;
 		this.email = email;
-		this.area_name = area_name;
-		this.pincode = pincode;
-		this.c_id = c_id;
+		this.area_id=area_id;
+		this.address = address;
 	}
 
 	public String getUsername() {
@@ -100,34 +97,29 @@ public class SellerRegistration {
 		this.email = email;
 	}
 
-	public String getArea_name() {
-		return area_name;
+	public int getArea_id() {
+		return area_id;
 	}
 
-	public void setArea_name(String area_name) {
-		this.area_name = area_name;
+	public void setArea_id(int area_id) {
+		this.area_id = area_id;
 	}
 
-	public int getPincode() {
-		return pincode;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setPincode(int pincode) {
-		this.pincode = pincode;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public int getC_id() {
-		return c_id;
+	@Override
+	public String toString() {
+		return "SellerRegistration [username=" + username + ", password=" + password + ", gst_no=" + gst_no
+				+ ", license_id=" + license_id + ", shop_name=" + shop_name + ", phone_no=" + phone_no + ", email="
+				+ email + ", area_id=" + area_id + ", c_id=" + address + "]";
 	}
 
-	public void setC_id(int c_id) {
-		this.c_id = c_id;
-	}
-
-	
-	
-	
-	
 	
 	
 

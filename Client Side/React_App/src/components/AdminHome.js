@@ -8,7 +8,7 @@ export default function AdminHome() {
                 <div className="container-fluid">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link to="approveSeller" className="nav-Link px-3" > Approve Seller </Link>
+                            <Link to="/approveSeller" className="nav-Link px-3" > Approve Seller </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="manageUsers" className="nav-Link px-3" > Manage Users </Link>
