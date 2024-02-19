@@ -26,6 +26,9 @@ export default function SellerHome() {
                             <Link to="/feedback" className="nav-Link px-3" > Feedback </Link>
                         </li>
                         <li className="nav-item">
+                            <Link to="/AddProductPage" className="nav-Link px-3" >  AddProductPage</Link>
+                        </li>
+                        <li className="nav-item">
                             <Link to="/logout" className="nav-Link px-3" > Logout </Link>
                         </li>
                         

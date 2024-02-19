@@ -12,8 +12,13 @@ import UpdateProfile from './components/UpdateProfile';
 import SearchProducts from './components/SearchProducts';
 import AddToCart from './components/AddToCart';
 import ConfirmOrder from './components/ConfirmOrder';
-import ApproveSeller from './components/ApproveSeller';
+import ApproveSeller2 from './components/ApproveSeller2';
 import UpdatePass from './components/UpdatePass';
+import HomeSlideShow from './components/HomeSlideShow';
+import NavBar from './components/NavBar';
+import AnimatedHeading from './components/AnimatedHeading';
+import AddProductPage from './components/AddProductPage';
+import ViewUsers from './components/ViewProducts';
 
 
 
@@ -24,25 +29,17 @@ function App() {
   return (
     <div className="App">
       <div style={{display: mystate.loggedIn?"none":"block"}}>
-        <nav className='navbar navbar-expand-sm bg-light mb-3'>
-          <div className='container-fluid'> 
-            <ul className="nav navbar">
-              <li className="nav-item">
-                <Link to="/sellerreg" className="nav-link px-3">Seller Registration</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/consumerreg" className="nav-link px-3">Consumer Registration</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link px-3">Login</Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <marquee behavior="scroll" direction="left">
-  <h1 className='bg-primary text-white'>Welcome to Tritron</h1>
-</marquee>  
+        <NavBar/>
+        <AnimatedHeading />
+        
+
+
+        {/* <marquee behavior="scroll" direction="left">
+        <h1 style={{ backgroundColor: '#f0f0f1', padding: '10px' }}>Welcome to Tritron</h1>
+
+</marquee>   */}
         {/* <h1 className='bg-primary text-white'>Welcome to Tritron</h1> */}
+        <HomeSlideShow/>
       </div>
       <Routes>
         <Route path='/login' element={<LoginComp />} />
@@ -53,10 +50,14 @@ function App() {
         <Route path="/seller_home" element={<SellerHome />} />
         <Route path="/updateprofile" element={<UpdatePass />} />
         {/* <Route path="/updateprofile" element={<UpdateProfile />} /> */}
-        <Route path="/searchproducts" element={<SearchProducts />} />
+        {/* <Route path="/searchproducts" element={<SearchProducts />} /> */}
         <Route path="/addcart" element={<AddToCart />} />
         <Route path="/confirmorder" element={<ConfirmOrder />} />
-        <Route path="/approveSeller" element={<ApproveSeller />} />
+        <Route path="/approveSeller" element={<ApproveSeller2 />} />
+        <Route path="/logout" element={<LoginComp />} />
+        <Route path="/AddProductPage" element={<AddProductPage />} />
+        <Route path="/searchproducts" element={<ViewUsers />} />
+
 
       </Routes>
     </div>

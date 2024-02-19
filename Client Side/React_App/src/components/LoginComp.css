@@ -1,48 +1,31 @@
-.container {
-    width: 100px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #f00f0f;
-    border-radius: 5px;
-    background-color: rgb(223, 166, 209);
-  }
-  
-  .mb-3 {
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .col-sm-2 col-form-label {
-    font-weight: bold;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .btn btn-primary me-2 {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  .btn-primary {
-    background-color: #ff0099;
-    color: #c22a2a;
-  }
-  
-  .btn-primary:hover {
-    background-color: #faa804;
-  }
-  
-  .error-message {
-    color: red;
-  }
-  
+.box {
+  margin-top: 50px; /* Adjust margin as needed */
+  padding: 20px;
+  background-color: #f0f0f0; /* Background color for the form container */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
+
+.form-control {
+  border-color: #ccc; /* Border color for form inputs */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary button background color */
+  border-color: #007bff; /* Primary button border color */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Danger button background color */
+  border-color: #dc3545; /* Danger button border color */
+}
+
+.btn-primary,
+.btn-danger {
+  color: #fff; /* Button text color */
+}
+
+.btn-primary:hover,
+.btn-danger:hover {
+  opacity: 0.8; /* Button opacity on hover */
+}
