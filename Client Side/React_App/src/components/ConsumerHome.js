@@ -2,8 +2,7 @@ export default function ConsumerHome() {
 
     return (
         <div>
-<<<<<<< Updated upstream
-=======
+
         <nav className="navbar navbar-expand-sm bg-light mb-3" >
                 <div className="container-fluid">
                     <ul className="navbar-nav">
@@ -32,7 +31,7 @@ export default function ConsumerHome() {
                     </ul>
                 </div>
             </nav>
->>>>>>> Stashed changes
+
             <h1>Consumer Home</h1>
             <Outlet />
         </div>

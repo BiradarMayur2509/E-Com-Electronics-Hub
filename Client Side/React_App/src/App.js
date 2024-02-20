@@ -5,8 +5,7 @@ import LoginComp from './components/LoginComp';
 import ConsumerHome from './components/ConsumerHome';
 import AdminHome from './components/AdminHome';
 import SellerHome from './components/SellerHome';
-<<<<<<< Updated upstream
-=======
+
 import { useSelector } from 'react-redux';
 import SellerReg from './components/SellerReg';
 import ConsumerReg from './components/ConsumerReg'
@@ -24,7 +23,7 @@ import ViewUsers from './components/ViewProducts';
 import ViewProducts from './components/ViewProducts';
 import ShowProducts from './components/ShowProducts';
 
->>>>>>> Stashed changes
+
 
 
 function App() {
@@ -57,8 +56,7 @@ function App() {
 
         </Route>
         <Route path="/seller_home" element={<SellerHome />} />
-<<<<<<< Updated upstream
-=======
+
         <Route path="/updateprofile" element={<UpdatePass />} />
         {/* <Route path="/updateprofile" element={<UpdateProfile />} /> */}
         {/* <Route path="/searchproducts" element={<SearchProducts />} /> */}
@@ -69,7 +67,7 @@ function App() {
         <Route path="/AddProductPage" element={<AddProductPage />} />
         
 
->>>>>>> Stashed changes
+
 
       </Routes>
     </div>
