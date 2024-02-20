@@ -111,19 +111,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 
 const ViewProducts = () => {
-  const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+  const [models, setModels] = useState([]);
   const [searchCriteria, setSearchCriteria] = useState('category');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleDelete = (id) => {
-    console.log("Delete clicked for product with ID:", id);
-    fetch(`http://localhost:8080/deleteProduct?id=${id}`)
+  const handleShow = (id) => {
+    console.log("Delete clicked for product with ID:"+id);
+    fetch(`http://localhost:8080/getProducts?id=${id}`)
       .then((response) => response.json())
       .then((data) => {
         console.log("Data:", data);
+        localStorage.setItem("searchedProducts",JSON.stringify(data));
+        navigate("../showProducts");
       })
       .catch((error) =>
         console.error("Error fetching data before delete:", error)
@@ -138,9 +141,9 @@ const ViewProducts = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:8080/viewProducts')
+    axios.get('http://localhost:8080/getAllModels')
       .then(response => {
-        setProducts(response.data);
+        setModels(response.data);
       })
       .catch(error => {
         console.error('Error fetching product data:', error);
@@ -181,28 +184,28 @@ const ViewProducts = () => {
         <thead>
           <tr>
             <th>Product ID</th>
-            <th>Category</th>
             <th>Brand Name</th>
             <th>Model Name</th>
-            <th>Description</th>
             <th>Base Price</th>
-            <th>Discounted Price</th>
+            <th>Description</th>
+            
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {products.map(product => (
-            <tr key={product.id}>
-              <td>{product.id}</td>
-              <td>{product.category}</td>
-              <td>{product.brandName}</td>
-              <td>{product.modelName}</td>
-              <td>{product.description}</td>
-              <td>{product.basePrice}</td>
-              <td>{product.discountedPrice}</td>
+          {models.map(model => (
+            <tr key={model.model_Id}>
+              <td> {model.model_Id}</td>
+              <td>{model.brand.brand_Name}</td>
+              <td>{model.model_Name}</td>
+              <td>{model.basePrice}</td>
+              <td>{model.description}</td>
+              
+
+              
               <td>
-                <button className="btn btn-danger" onClick={() => handleDelete(product.id)}>
-                  Delete
+                <button className="btn btn-danger" onClick={() => handleShow(model.model_Id)}>
+                  Show Sellers
                 </button>
               </td>
             </tr>
