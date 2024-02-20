@@ -1,0 +1,38 @@
+.track-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .order-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    height: 10px;
+    margin-top: 10px;
+  }
+  
+  .progress {
+    background-color: #007bff;
+    border-radius: 4px;
+    height: 100%;
+    width: 60%; /* Adjust width based on order progress */
+  }
+  
+  .order-details {
+    margin-top: 20px;
+  }
+  
+  .order-details p {
+    margin: 5px 0;
+  }
+  

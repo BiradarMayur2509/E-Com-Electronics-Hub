@@ -8,22 +8,22 @@ export default function ConsumerHome() {
                 <div className="container-fluid">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link to="/updateprofile" className="nav-Link px-3" > Update Profile </Link>
+                            <Link to="updateprofileCus" className="nav-Link px-3" > Update Profile </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/searchproducts" className="nav-Link px-3" > Search Products </Link>
+                            <Link to="searchproducts" className="nav-Link px-3" > Search Products </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/addcart" className="nav-Link px-3" > Add Cart </Link>
+                            <Link to="addcart" className="nav-Link px-3" > Add Cart </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/confirmorder" className="nav-Link px-3" > Confirm Order </Link>
+                            <Link to="confirmorder" className="nav-Link px-3" > Confirm Order </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/trackorder" className="nav-Link px-3" > Track Order </Link>
+                            <Link to="trackorder" className="nav-Link px-3" > Track Order </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/feedback" className="nav-Link px-3" > Feedback </Link>
+                            <Link to="feedback" className="nav-Link px-3" > Feedback </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/logout" className="nav-Link px-3" > Logout </Link>
@@ -33,6 +33,7 @@ export default function ConsumerHome() {
                 </div>
             </nav>
             <h1>Consumer Home</h1>
+            <Outlet/>
         </div>
     )
 }

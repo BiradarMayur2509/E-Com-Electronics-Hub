@@ -62,7 +62,7 @@ export default function ApproveSeller2() {
 
   return (
     <div>
-     <nav className="navbar navbar-expand-sm navbar-light bg-dark">
+     {/* <nav className="navbar navbar-expand-sm navbar-light bg-dark">
   <div className="container-fluid">
     <div className="navbar-nav">
       <div className="nav-item">
@@ -79,7 +79,7 @@ export default function ApproveSeller2() {
       </div>
     </div>
   </div>
-</nav>
+</nav> */}
 
 
       <h1 className="text-center mt-4">System Admin Homepage</h1>

@@ -15,7 +15,7 @@ export default function AdminHome() {
                   
 
                         <li className="nav-item">
-                            <Link to="/approveSeller" className="nav-link px-3">Approve Seller</Link> 
+                            <Link to="approveSeller" className="nav-link px-3">Approve Seller</Link> 
                         </li>
                         <li className="nav-item">
                             <Link to="/manageUsers" className="nav-link px-3">Manage Users</Link> 
@@ -24,11 +24,12 @@ export default function AdminHome() {
                             <Link to="/viewFeedback" className="nav-link px-3">View Feedback</Link> 
                         </li>
                         <li className="nav-item">
-                            <Link to="/addCategory" className="nav-link px-3">Add Category</Link> 
+                            <Link to="addBrand" className="nav-link px-3">Add Brand</Link> 
                         </li>
                         <li className="nav-item">
-                            <Link to="/addProduct" className="nav-link px-3">Add Product</Link> 
+                            <Link to="addModel" className="nav-link px-3">Add Model</Link> 
                         </li>
+                       
                         <li className="nav-item">
                             <Link to="/logout" className="nav-link px-3">Logout</Link> 
                         </li>

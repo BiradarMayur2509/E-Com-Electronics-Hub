@@ -8,7 +8,7 @@ import SellerHome from './components/SellerHome';
 import { useSelector } from 'react-redux';
 import SellerReg from './components/SellerReg';
 import ConsumerReg from './components/ConsumerReg'
-import UpdateProfile from './components/UpdateProfile';
+import UpdateProfileCus from './components/UpdateProfileCus';
 import SearchProducts from './components/SearchProducts';
 import AddToCart from './components/AddToCart';
 import ConfirmOrder from './components/ConfirmOrder';
@@ -19,6 +19,10 @@ import NavBar from './components/NavBar';
 import AnimatedHeading from './components/AnimatedHeading';
 import AddProductPage from './components/AddProductPage';
 import ViewUsers from './components/ViewProducts';
+import Feedback from 'react-bootstrap/esm/Feedback';
+import TrackOrder from './components/TrackOrder';
+import AddBrand from './components/AddBrand';
+import AddModel from './components/AddModel';
 
 
 
@@ -45,15 +49,29 @@ function App() {
         <Route path='/login' element={<LoginComp />} />
         <Route path='/sellerreg' element={<SellerReg />} />
         <Route path='/consumerreg' element={<ConsumerReg />} />
-        <Route path="/admin_home" element={<AdminHome />} />
-        <Route path="/consumer_home" element={<ConsumerHome />} />
+        <Route path="/admin_home" element={<AdminHome />} >
+            <Route path="approveSeller" element={<ApproveSeller2 />} />
+            <Route path="addbrand" element={< AddBrand />} />
+            <Route path="addModel" element={<AddModel />} />
+            {/* <Route path="approveSeller" element={<ApproveSeller2 />} />
+            <Route path="approveSeller" element={<ApproveSeller2 />} /> */}
+
+        </Route>
+        <Route path="/consumer_home" element={<ConsumerHome />} >
+            <Route path="updateprofileCus" element={<UpdateProfileCus />} />
+            <Route path="searchproducts" element={<SearchProducts />} />
+            <Route path="addcart" element={<AddToCart />} />
+            <Route path="confirmorder" element={<ConfirmOrder />} />
+            <Route path="trackorder" element={<TrackOrder />} />
+            <Route path="feedback" element={<Feedback />} />
+        </Route>
         <Route path="/seller_home" element={<SellerHome />} />
-        <Route path="/updateprofile" element={<UpdatePass />} />
+        <Route path="/updateprofileCus" element={<UpdateProfileCus />} />
         {/* <Route path="/updateprofile" element={<UpdateProfile />} /> */}
         {/* <Route path="/searchproducts" element={<SearchProducts />} /> */}
         <Route path="/addcart" element={<AddToCart />} />
         <Route path="/confirmorder" element={<ConfirmOrder />} />
-        <Route path="/approveSeller" element={<ApproveSeller2 />} />
+       
         <Route path="/logout" element={<LoginComp />} />
         <Route path="/AddProductPage" element={<AddProductPage />} />
         <Route path="/searchproducts" element={<ViewUsers />} />

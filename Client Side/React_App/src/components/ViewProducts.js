@@ -109,38 +109,21 @@
 
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom'; 
 
-const ViewProducts = () => {
+function ViewProducts() {
   const [products, setProducts] = useState([]);
-  const [searchCriteria, setSearchCriteria] = useState('category');
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleDelete = (id) => {
-    console.log("Delete clicked for product with ID:", id);
-    fetch(`http://localhost:8080/deleteProduct?id=${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Data:", data);
-      })
-      .catch((error) =>
-        console.error("Error fetching data before delete:", error)
-      );
-  };
-  
-
-  const handleSearch = () => {
-    console.log(`Searching by ${searchCriteria}: ${searchTerm}`);
-
-    
-  };
 
   useEffect(() => {
-    axios.get('http://localhost:8080/viewProducts')
+    fetch('http://localhost:8080/viewProducts')
       .then(response => {
-        setProducts(response.data);
+        if (!response.ok) {
+          throw new Error('Failed to fetch product data');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setProducts(data);
       })
       .catch(error => {
         console.error('Error fetching product data:', error);
@@ -151,7 +134,7 @@ const ViewProducts = () => {
     <div className="container mt-4">
       <h2 className="mb-4" style={{ color: '#007BFF' }}>Products</h2>
       <div className="mb-3 row">
-        <div className="col-md-3">
+        {/* <div className="col-md-3">
           <select
             className="form-select"
             value={searchCriteria}
@@ -161,8 +144,8 @@ const ViewProducts = () => {
             <option value="brandName">Brand Name</option>
             <option value="modelName">Model Name</option>
           </select>
-        </div>
-        <div className="col-md-6">
+        </div> */}
+        {/* <div className="col-md-6">
           <input
             type="text"
             className="form-control"
@@ -170,12 +153,12 @@ const ViewProducts = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-        </div>
-        <div className="col-md-3">
+        </div> */}
+        {/* <div className="col-md-3">
           <button className="btn btn-primary" onClick={handleSearch}>
             Search
           </button>
-        </div>
+        </div> */}
       </div>
       <table className="table table-striped table-hover">
         <thead>
@@ -201,9 +184,9 @@ const ViewProducts = () => {
               <td>{product.basePrice}</td>
               <td>{product.discountedPrice}</td>
               <td>
-                <button className="btn btn-danger" onClick={() => handleDelete(product.id)}>
+                {/* <button className="btn btn-danger" onClick={() => handleDelete(product.id)}>
                   Delete
-                </button>
+                </button> */}
               </td>
             </tr>
           ))}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './UpdateProfile.css';
+import './UpdateProfileCus.css';
 
-function UpdateProfile() {
+function UpdateProfileCus() {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -28,10 +28,10 @@ function UpdateProfile() {
   };
 
   return (
-    <div className='updateprofile'>
+    <div className='updateprofile container'> {/* Added Bootstrap container class */}
       <h2>Update Profile</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group"> {/* Added Bootstrap form-group class */}
           <label htmlFor="username">Username: </label>
           <input
             type="text"
@@ -39,10 +39,11 @@ function UpdateProfile() {
             name="username"
             value={formData.username}
             onChange={handleChange}
+            className="form-control" 
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="password">Password: </label>
           <input
             type="password"
@@ -50,10 +51,11 @@ function UpdateProfile() {
             name="password"
             value={formData.password}
             onChange={handleChange}
+            className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="firstName">First Name: </label>
           <input
             type="text"
@@ -61,10 +63,11 @@ function UpdateProfile() {
             name="first_name"
             value={formData.first_name}
             onChange={handleChange}
+            className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="lastName">Last Name: </label>
           <input
             type="text"
@@ -72,10 +75,11 @@ function UpdateProfile() {
             name="last_name"
             value={formData.last_name}
             onChange={handleChange}
+            className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="phoneNo">Phone Number: </label>
           <input
             type="number"
@@ -83,10 +87,11 @@ function UpdateProfile() {
             name="phone_no"
             value={formData.phone_no}
             onChange={handleChange}
+            className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="email">Email: </label>
           <input
             type="email"
@@ -94,14 +99,15 @@ function UpdateProfile() {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            className="form-control"
             required
           />
         </div>
         {/* Add more fields as needed */}
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button> {/* Added Bootstrap btn and btn-primary classes */}
       </form>
     </div>
   );
 }
 
-export default UpdateProfile;
+export default UpdateProfileCus;
